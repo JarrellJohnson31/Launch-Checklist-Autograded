@@ -38,14 +38,17 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
 
     if (validateInput(pilot) === 'Empty' || validateInput(copilot) === 'Empty' || validateInput(fuelLevel) === 'Empty' || validateInput(cargoLevel) === 'Empty') {
         alert("Missing Required Fields");
+        return;
     }
 
     if (validateInput(pilot) === 'Is a Number' || validateInput(copilot) === 'Is a Number') {
         alert("Pilots have to be string values!");
+        return;
     }
 
     if (validateInput(cargoLevel) === 'Not a Number' || validateInput(fuelLevel) === 'Not a Number') {
         alert("fuelLevel and cargoMass must be a numerical value!");
+        return;
     }
 
     if (fuelLevel < 10000) {
